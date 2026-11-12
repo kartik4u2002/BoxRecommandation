@@ -14,7 +14,25 @@ This document provides a transparent, truthful disclosure of the AI assistance u
 ## 2. Actual Prompts Used
 
 The complete specification was provided via the master user prompt:
-- **Prompt:** `"Act as a senior Python/Django backend developer. I have a hiring assignment to build an AI-Assisted Box Selection System for an ecommerce warehouse. ... [Master Prompt: Django AI-Assisted Box Selection System]"`
+- **Prompt:** `"Perform a final code review of the completed Box Selection System.
+
+Do not add new features.
+
+Review the implementation against the original assignment and verify:
+
+1. All database models have appropriate validation.
+2. The packing engine checks all six orientations.
+3. Products cannot overlap or exceed box boundaries.
+4. Product quantities are handled correctly.
+5. Weight and volume checks work correctly.
+6. The cheapest feasible box is selected.
+7. Every module has relevant unit tests.
+8. Tests execute against actual business logic.
+9. All tests pass when running `python manage.py test`.
+10. README.md links to TEST_OUTPUT.md.
+Run the complete test suite again after any code changes.
+
+Report any remaining limitations honestly."`
 - The prompt specified exact requirements for:
   - Four models (`Product`, `Box`, `Order`, `OrderItem`).
   - Business rules for preliminary filtering (active status, weight, volume).
